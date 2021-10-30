@@ -2,39 +2,39 @@
 #include <string>
 using namespace std;
 
-void ch(string &s1, string s2, string s3) 
+void lol(string &str1, string str2, string str3) 
 {
-	int i = s1.find(s2);
-	s1.erase(i, s2.size());
-	s1.insert(i, s3);
+	int l = str1.find(str2);
+	str1.erase(l, str2.size());
+	str1.insert(l, str3);
 }
 
 int main()
 {
-	string s;
-	bool flag = 0;
-	setlocale(0, "");
-	cout << "Введите строку из символов a и b:\n";
-	cin >> s;
-	while (flag == 0) 
+	string str;
+	bool figs = 0;
+	setlocale(LC_ALL, "russian");
+	cout << "Введите строку состоящую из символов a и b:\n";
+	cin >> str;
+	while (figs == 0) 
 	{
-		int ia = s.find("*a");
-		int ib = s.find("*b");
-		if (ia >= 0)
+		int la = str.find("*a");
+		int lb = str.find("*b");
+		if (la >= 0)
 		{
-			ch(s, "*a", "");
-			flag = 1;
+			lol(str, "*a", "");
+			figs = 1;
 		}
-		else if (ib >= 0)
+		else if (lb >= 0)
 		{
-			ch(s, "*b", "");
-			flag = 1;
+			lol(str, "*b", "");
+			figs = 1;
 		}
 		else 
 		{
-			ch(s, "", "*");
+			lol(str, "", "*");
 		}
 	}
-	cout << "Результат - " << s;
+	cout << "Результат программы:  " << str;
 	return 0;
 }
