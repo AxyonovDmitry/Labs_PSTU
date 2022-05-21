@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <glut.h>
 #include"Graph.h"
 using namespace std;
