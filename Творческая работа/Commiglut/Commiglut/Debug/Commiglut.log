@@ -1,0 +1,21 @@
+﻿  Commiglut.cpp
+  Graph.cpp
+C:\Users\axyon\source\repos\Commiglut\Commiglut\Graph.cpp(125,21): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\axyon\source\repos\Commiglut\Commiglut\Graph.cpp(128,22): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\axyon\source\repos\Commiglut\Commiglut\Graph.cpp(178,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\axyon\source\repos\Commiglut\Commiglut\Graph.cpp(180,21): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\axyon\source\repos\Commiglut\Commiglut\Graph.cpp(399,21): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\axyon\source\repos\Commiglut\Commiglut\Graph.cpp(422,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\axyon\source\repos\Commiglut\Commiglut\Graph.cpp(430,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\axyon\source\repos\Commiglut\Commiglut\Graph.cpp(590,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\axyon\source\repos\Commiglut\Commiglut\Graph.cpp(605,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\axyon\source\repos\Commiglut\Commiglut\Graph.cpp(707,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\axyon\source\repos\Commiglut\Commiglut\Graph.cpp(735,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\axyon\source\repos\Commiglut\Commiglut\Graph.cpp(739,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\axyon\source\repos\Commiglut\Commiglut\Graph.cpp(766,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\axyon\source\repos\Commiglut\Commiglut\Graph.cpp(794,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\axyon\source\repos\Commiglut\Commiglut\Graph.cpp(798,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\axyon\source\repos\Commiglut\Commiglut\Graph.cpp(825,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\axyon\source\repos\Commiglut\Commiglut\Graph.cpp(852,20): warning C4018: <: несоответствие типов со знаком и без знака
+  Создание кода...
+  Commiglut.vcxproj -> C:\Users\axyon\source\repos\Commiglut\Debug\Commiglut.exe
