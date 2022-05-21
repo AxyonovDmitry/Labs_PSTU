@@ -2,69 +2,69 @@
 #include <glut.h>
 #include <iostream>
 #include <iomanip>
-#include <vector> //Вектор - контейнер
+#include <vector> //Р’РµРєС‚РѕСЂ - РєРѕРЅС‚РµР№РЅРµСЂ
 #include <string>
 using namespace std;
 
-const int maxSize = 20; //Максимальное значение размера 20
-extern int WinW; // Ширина окна
-extern int WinH; // Высота окна
+const int maxSize = 20; //РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ СЂР°Р·РјРµСЂР° 20
+extern int WinW; // РЁРёСЂРёРЅР° РѕРєРЅР°
+extern int WinH; // Р’С‹СЃРѕС‚Р° РѕРєРЅР°
 
-struct VertexCoord //структура координат вектора
+struct VertexCoord //СЃС‚СЂСѓРєС‚СѓСЂР° РєРѕРѕСЂРґРёРЅР°С‚ РІРµРєС‚РѕСЂР°
 {
 	int x, y;
 };
 
-class Graph //Класс графа
+class Graph //РљР»Р°СЃСЃ РіСЂР°С„Р°
 {
 private:
-	vector<int> vertList; //список вершин
-	int adjMatrix[maxSize][maxSize]; // матрица смежности
+	vector<int> vertList; //СЃРїРёСЃРѕРє РІРµСЂС€РёРЅ
+	int adjMatrix[maxSize][maxSize]; // РјР°С‚СЂРёС†Р° СЃРјРµР¶РЅРѕСЃС‚Рё
 public:
-	Graph(); //Конструктор
-	~Graph(); //Деструктор
-	bool IsEmpty(); //Метод если граф пуст
-	bool IsFull(); //Метод если граф полон
-	int GetVertPos(const int& vertex); //Метод получения положения вершины
-	int GetVertText(int i); //Метод получения текста вершины
-	vector<int> GetVertList(); //Метод получения списка вершин
-	int GetAdjMatrixElem(int i, int j); //Метод получения элементов матрицы смежности
-	int GetAmountVerts(); //Метод получения кол-ва вершин
-	int GetAmountEdges(); //Метод получения кол-ва ребер
-	void SetEdgeZero(int i, int j); //Метод зануления ребер
-	void InsertVertex(const int& vertex); //Метод ввода вершин
-	void InsertEdge(const int& vertex1, const int& vertex2, int weigth); //Метод ввода ребер
-	void Print(); //Метод вывода
-	void EraseLastVert(); //Метод удаления последней вершины
-	void EraseEdge(const int& vertex1, const int& vertex2); //Метод удаления ребра
-	void DrawGraph(); //Метод отрисовки графа
+	Graph(); //РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
+	~Graph(); //Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
+	bool IsEmpty(); //РњРµС‚РѕРґ РµСЃР»Рё РіСЂР°С„ РїСѓСЃС‚
+	bool IsFull(); //РњРµС‚РѕРґ РµСЃР»Рё РіСЂР°С„ РїРѕР»РѕРЅ
+	int GetVertPos(const int& vertex); //РњРµС‚РѕРґ РїРѕР»СѓС‡РµРЅРёСЏ РїРѕР»РѕР¶РµРЅРёСЏ РІРµСЂС€РёРЅС‹
+	int GetVertText(int i); //РњРµС‚РѕРґ РїРѕР»СѓС‡РµРЅРёСЏ С‚РµРєСЃС‚Р° РІРµСЂС€РёРЅС‹
+	vector<int> GetVertList(); //РњРµС‚РѕРґ РїРѕР»СѓС‡РµРЅРёСЏ СЃРїРёСЃРєР° РІРµСЂС€РёРЅ
+	int GetAdjMatrixElem(int i, int j); //РњРµС‚РѕРґ РїРѕР»СѓС‡РµРЅРёСЏ СЌР»РµРјРµРЅС‚РѕРІ РјР°С‚СЂРёС†С‹ СЃРјРµР¶РЅРѕСЃС‚Рё
+	int GetAmountVerts(); //РњРµС‚РѕРґ РїРѕР»СѓС‡РµРЅРёСЏ РєРѕР»-РІР° РІРµСЂС€РёРЅ
+	int GetAmountEdges(); //РњРµС‚РѕРґ РїРѕР»СѓС‡РµРЅРёСЏ РєРѕР»-РІР° СЂРµР±РµСЂ
+	void SetEdgeZero(int i, int j); //РњРµС‚РѕРґ Р·Р°РЅСѓР»РµРЅРёСЏ СЂРµР±РµСЂ
+	void InsertVertex(const int& vertex); //РњРµС‚РѕРґ РІРІРѕРґР° РІРµСЂС€РёРЅ
+	void InsertEdge(const int& vertex1, const int& vertex2, int weigth); //РњРµС‚РѕРґ РІРІРѕРґР° СЂРµР±РµСЂ
+	void Print(); //РњРµС‚РѕРґ РІС‹РІРѕРґР°
+	void EraseLastVert(); //РњРµС‚РѕРґ СѓРґР°Р»РµРЅРёСЏ РїРѕСЃР»РµРґРЅРµР№ РІРµСЂС€РёРЅС‹
+	void EraseEdge(const int& vertex1, const int& vertex2); //РњРµС‚РѕРґ СѓРґР°Р»РµРЅРёСЏ СЂРµР±СЂР°
+	void DrawGraph(); //РњРµС‚РѕРґ РѕС‚СЂРёСЃРѕРІРєРё РіСЂР°С„Р°
 };
 extern Graph graph;
-void makeGraph(); //Метод создания графа
-void reshape(int w, int h); //Метод изменения
-void display(); //Метод вызова дисплея
-int** Change_Matrix(); //Метод изменения матрицы
-int* Search_MinElem(int* line, int n); //Метод поиска минимального элемента
-void Print_Matrix(int** matrix); //Метод вывод матрицы
-int** Reduct_Matrix(int** oldmatrix); //Метод матрица сокращения
-int** High_Zero(int** oldmatrix); //Метод удаления 0 с наибольшей оценкой
-void Print_Result(); //Метод вывода результата
+void makeGraph(); //РњРµС‚РѕРґ СЃРѕР·РґР°РЅРёСЏ РіСЂР°С„Р°
+void reshape(int w, int h); //РњРµС‚РѕРґ РёР·РјРµРЅРµРЅРёСЏ
+void display(); //РњРµС‚РѕРґ РІС‹Р·РѕРІР° РґРёСЃРїР»РµСЏ
+int** Change_Matrix(); //РњРµС‚РѕРґ РёР·РјРµРЅРµРЅРёСЏ РјР°С‚СЂРёС†С‹
+int* Search_MinElem(int* line, int n); //РњРµС‚РѕРґ РїРѕРёСЃРєР° РјРёРЅРёРјР°Р»СЊРЅРѕРіРѕ СЌР»РµРјРµРЅС‚Р°
+void Print_Matrix(int** matrix); //РњРµС‚РѕРґ РІС‹РІРѕРґ РјР°С‚СЂРёС†С‹
+int** Reduct_Matrix(int** oldmatrix); //РњРµС‚РѕРґ РјР°С‚СЂРёС†Р° СЃРѕРєСЂР°С‰РµРЅРёСЏ
+int** High_Zero(int** oldmatrix); //РњРµС‚РѕРґ СѓРґР°Р»РµРЅРёСЏ 0 СЃ РЅР°РёР±РѕР»СЊС€РµР№ РѕС†РµРЅРєРѕР№
+void Print_Result(); //РњРµС‚РѕРґ РІС‹РІРѕРґР° СЂРµР·СѓР»СЊС‚Р°С‚Р°
 
-void setCoords(int i, int n); //Метод установки координат
-bool SalesmanPossible(int** matrix); //Метод возможности задачи о коммивояжере
-int ClickOnCircle(int x, int y); //Метод нажатия на круг
-void ButtonMouseOn(int x, int y); //Метод нажатия кнопки мыши
-void mouseMove(int x, int y); //Метод движения курсора
-void mouseClick(int button, int state, int x, int y); //Метод клика мыши
+void setCoords(int i, int n); //РњРµС‚РѕРґ СѓСЃС‚Р°РЅРѕРІРєРё РєРѕРѕСЂРґРёРЅР°С‚
+bool SalesmanPossible(int** matrix); //РњРµС‚РѕРґ РІРѕР·РјРѕР¶РЅРѕСЃС‚Рё Р·Р°РґР°С‡Рё Рѕ РєРѕРјРјРёРІРѕСЏР¶РµСЂРµ
+int ClickOnCircle(int x, int y); //РњРµС‚РѕРґ РЅР°Р¶Р°С‚РёСЏ РЅР° РєСЂСѓРі
+void ButtonMouseOn(int x, int y); //РњРµС‚РѕРґ РЅР°Р¶Р°С‚РёСЏ РєРЅРѕРїРєРё РјС‹С€Рё
+void mouseMove(int x, int y); //РњРµС‚РѕРґ РґРІРёР¶РµРЅРёСЏ РєСѓСЂСЃРѕСЂР°
+void mouseClick(int button, int state, int x, int y); //РњРµС‚РѕРґ РєР»РёРєР° РјС‹С€Рё
 
-void drawBtnSalesman(); //Метод отрисови кнопки задача коммивояжера
-void drawBtnNewGraph(); //Метод отрисови кнопки создания нового графа
-void drawBtnAddVertex(); //Метод отрисови кнопки добавления вершины
-void drawBtnDelVertex(); //Метод отрисови кнопки удаления вершины
-void drawBtnAddEdge(); //Метод отрисови кнопки добавления ребер
-void drawBtnDelEdge(); //Метод отрисови кнопки удаления ребер
-void drawCircle(int x, int y, int R); //Метод отрисови круга
-void drawCircleMouseOn(int x, int y, int R); //Метод отрисови круга на который нажала мышка
-void drawText(int nom, int x1, int y1); //Метод отрисови текста
-void drawLine(int text, int x0, int y0, int x1, int y1); //Метод отрисови линий
-void drawVertex(int n); //Метод отрисовки вершин
+void drawBtnSalesman(); //РњРµС‚РѕРґ РѕС‚СЂРёСЃРѕРІРё РєРЅРѕРїРєРё Р·Р°РґР°С‡Р° РєРѕРјРјРёРІРѕСЏР¶РµСЂР°
+void drawBtnNewGraph(); //РњРµС‚РѕРґ РѕС‚СЂРёСЃРѕРІРё РєРЅРѕРїРєРё СЃРѕР·РґР°РЅРёСЏ РЅРѕРІРѕРіРѕ РіСЂР°С„Р°
+void drawBtnAddVertex(); //РњРµС‚РѕРґ РѕС‚СЂРёСЃРѕРІРё РєРЅРѕРїРєРё РґРѕР±Р°РІР»РµРЅРёСЏ РІРµСЂС€РёРЅС‹
+void drawBtnDelVertex(); //РњРµС‚РѕРґ РѕС‚СЂРёСЃРѕРІРё РєРЅРѕРїРєРё СѓРґР°Р»РµРЅРёСЏ РІРµСЂС€РёРЅС‹
+void drawBtnAddEdge(); //РњРµС‚РѕРґ РѕС‚СЂРёСЃРѕРІРё РєРЅРѕРїРєРё РґРѕР±Р°РІР»РµРЅРёСЏ СЂРµР±РµСЂ
+void drawBtnDelEdge(); //РњРµС‚РѕРґ РѕС‚СЂРёСЃРѕРІРё РєРЅРѕРїРєРё СѓРґР°Р»РµРЅРёСЏ СЂРµР±РµСЂ
+void drawCircle(int x, int y, int R); //РњРµС‚РѕРґ РѕС‚СЂРёСЃРѕРІРё РєСЂСѓРіР°
+void drawCircleMouseOn(int x, int y, int R); //РњРµС‚РѕРґ РѕС‚СЂРёСЃРѕРІРё РєСЂСѓРіР° РЅР° РєРѕС‚РѕСЂС‹Р№ РЅР°Р¶Р°Р»Р° РјС‹С€РєР°
+void drawText(int nom, int x1, int y1); //РњРµС‚РѕРґ РѕС‚СЂРёСЃРѕРІРё С‚РµРєСЃС‚Р°
+void drawLine(int text, int x0, int y0, int x1, int y1); //РњРµС‚РѕРґ РѕС‚СЂРёСЃРѕРІРё Р»РёРЅРёР№
+void drawVertex(int n); //РњРµС‚РѕРґ РѕС‚СЂРёСЃРѕРІРєРё РІРµСЂС€РёРЅ
