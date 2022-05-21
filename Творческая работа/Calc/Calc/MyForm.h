@@ -10,11 +10,11 @@ namespace Calc {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace System::Threading::Tasks;
-	using namespace System::Text::RegularExpressions; // Регулярные выражения
-	using namespace System::Net; // Для подключения к интернету
+	using namespace System::Text::RegularExpressions; // Р РµРіСѓР»СЏСЂРЅС‹Рµ РІС‹СЂР°Р¶РµРЅРёСЏ
+	using namespace System::Net; // Р”Р»СЏ РїРѕРґРєР»СЋС‡РµРЅРёСЏ Рє РёРЅС‚РµСЂРЅРµС‚Сѓ
 
 	/// <summary>
-	/// Сводка для MyForm
+	/// РЎРІРѕРґРєР° РґР»СЏ MyForm
 	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
@@ -23,13 +23,13 @@ namespace Calc {
 		{
 			InitializeComponent();
 			//
-			//TODO: добавьте код конструктора
+			//TODO: РґРѕР±Р°РІСЊС‚Рµ РєРѕРґ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// Освободить все используемые ресурсы.
+		/// РћСЃРІРѕР±РѕРґРёС‚СЊ РІСЃРµ РёСЃРїРѕР»СЊР·СѓРµРјС‹Рµ СЂРµСЃСѓСЂСЃС‹.
 		/// </summary>
 		~MyForm()
 		{
@@ -70,14 +70,14 @@ namespace Calc {
 
 	private:
 		/// <summary>
-		/// Обязательная переменная конструктора.
+		/// РћР±СЏР·Р°С‚РµР»СЊРЅР°СЏ РїРµСЂРµРјРµРЅРЅР°СЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Требуемый метод для поддержки конструктора — не изменяйте 
-		/// содержимое этого метода с помощью редактора кода.
+		/// РўСЂРµР±СѓРµРјС‹Р№ РјРµС‚РѕРґ РґР»СЏ РїРѕРґРґРµСЂР¶РєРё РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° вЂ” РЅРµ РёР·РјРµРЅСЏР№С‚Рµ 
+		/// СЃРѕРґРµСЂР¶РёРјРѕРµ СЌС‚РѕРіРѕ РјРµС‚РѕРґР° СЃ РїРѕРјРѕС‰СЊСЋ СЂРµРґР°РєС‚РѕСЂР° РєРѕРґР°.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -118,7 +118,7 @@ namespace Calc {
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(354, 35);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"Калькулятор Валюты:";
+			this->label1->Text = L"РљР°Р»СЊРєСѓР»СЏС‚РѕСЂ Р’Р°Р»СЋС‚С‹:";
 			this->label1->Click += gcnew System::EventHandler(this, &MyForm::label1_Click);
 			// 
 			// pictureBox1
@@ -144,7 +144,7 @@ namespace Calc {
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(225, 95);
 			this->button1->TabIndex = 2;
-			this->button1->Text = L"Узнать\r\nкурс:";
+			this->button1->Text = L"РЈР·РЅР°С‚СЊ\r\nРєСѓСЂСЃ:";
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
@@ -210,7 +210,7 @@ namespace Calc {
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(126, 35);
 			this->label3->TabIndex = 7;
-			this->label3->Text = L"Вывод:";
+			this->label3->Text = L"Р’С‹РІРѕРґ:";
 			this->label3->Click += gcnew System::EventHandler(this, &MyForm::label3_Click);
 			// 
 			// label4
@@ -224,7 +224,7 @@ namespace Calc {
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(69, 35);
 			this->label4->TabIndex = 8;
-			this->label4->Text = L"ИЗ:";
+			this->label4->Text = L"РР—:";
 			// 
 			// label5
 			// 
@@ -237,7 +237,7 @@ namespace Calc {
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(49, 35);
 			this->label5->TabIndex = 9;
-			this->label5->Text = L"В:";
+			this->label5->Text = L"Р’:";
 			// 
 			// label6
 			// 
@@ -250,7 +250,7 @@ namespace Calc {
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(164, 35);
 			this->label6->TabIndex = 13;
-			this->label6->Text = L"Номинал:";
+			this->label6->Text = L"РќРѕРјРёРЅР°Р»:";
 			// 
 			// numericUpDown1
 			// 
@@ -280,7 +280,7 @@ namespace Calc {
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(199, 17);
 			this->label7->TabIndex = 16;
-			this->label7->Text = L"Аксёнов Дмитрий РИС-21-1б";
+			this->label7->Text = L"РђРєСЃС‘РЅРѕРІ Р”РјРёС‚СЂРёР№ Р РРЎ-21-1Р±";
 			this->label7->Click += gcnew System::EventHandler(this, &MyForm::label7_Click);
 			// 
 			// pictureBox2
@@ -359,7 +359,7 @@ namespace Calc {
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(171, 56);
 			this->button2->TabIndex = 21;
-			this->button2->Text = L"Очистить";
+			this->button2->Text = L"РћС‡РёСЃС‚РёС‚СЊ";
 			this->button2->UseVisualStyleBackColor = false;
 			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
 			// 
@@ -400,7 +400,7 @@ namespace Calc {
 			this->MinimizeBox = false;
 			this->MinimumSize = System::Drawing::Size(1000, 600);
 			this->Name = L"MyForm";
-			this->Text = L"Калькулятор Валюты:";
+			this->Text = L"РљР°Р»СЊРєСѓР»СЏС‚РѕСЂ Р’Р°Р»СЋС‚С‹:";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->EndInit();
@@ -424,24 +424,24 @@ namespace Calc {
 		
 	}
 
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) // Объект кнопка, алгоритм работы калькулятора.
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) // РћР±СЉРµРєС‚ РєРЅРѕРїРєР°, Р°Р»РіРѕСЂРёС‚Рј СЂР°Р±РѕС‚С‹ РєР°Р»СЊРєСѓР»СЏС‚РѕСЂР°.
 {
 	//----------------------------------------------------------------------------------------------------//
-	// Парсинг сайта для сбора данных о валютах
+	// РџР°СЂСЃРёРЅРі СЃР°Р№С‚Р° РґР»СЏ СЃР±РѕСЂР° РґР°РЅРЅС‹С… Рѕ РІР°Р»СЋС‚Р°С…
 	//----------------------------------------------------------------------------------------------------//
-	String^ pattern1; String^ pattern2; // Наши будущие результаты
-	System::Net::WebClient^ wb = gcnew System::Net::WebClient(); //Создаем клиент
-	String^ line = wb->DownloadString("https://cbr.ru/scripts/XML_daily.asp?"); // Скачиваем страницу сайта
-	if ((comboBox1->Text != "RUB")||(comboBox2->Text != "RUB")) // Если наши валюты не являются рублем.
+	String^ pattern1; String^ pattern2; // РќР°С€Рё Р±СѓРґСѓС‰РёРµ СЂРµР·СѓР»СЊС‚Р°С‚С‹
+	System::Net::WebClient^ wb = gcnew System::Net::WebClient(); //РЎРѕР·РґР°РµРј РєР»РёРµРЅС‚
+	String^ line = wb->DownloadString("https://cbr.ru/scripts/XML_daily.asp?"); // РЎРєР°С‡РёРІР°РµРј СЃС‚СЂР°РЅРёС†Сѓ СЃР°Р№С‚Р°
+	if ((comboBox1->Text != "RUB")||(comboBox2->Text != "RUB")) // Р•СЃР»Рё РЅР°С€Рё РІР°Р»СЋС‚С‹ РЅРµ СЏРІР»СЏСЋС‚СЃСЏ СЂСѓР±Р»РµРј.
 	{
-		Regex^ rg1 = gcnew Regex("<NumCode>(.*?)</NumCode><CharCode>" + comboBox1->Text + "</CharCode><Nominal>(.*?)</Nominal><Name>(.*?)</Name><Value>(.*?)</Value>"); //Шаблон для поиска 1
-		Regex^ rg2 = gcnew Regex("<NumCode>(.*?)</NumCode><CharCode>" + comboBox2->Text + "</CharCode><Nominal>(.*?)</Nominal><Name>(.*?)</Name><Value>(.*?)</Value>"); //Шаблон для поиска 2
-		Match^ match1 = rg1->Match(line); //Поиск по шаблону 1
-		Match^ match2 = rg2->Match(line); //Поиск по шаблону 2
-		pattern1 = "" + match1->Groups[4]; //Результат поиска 1
-		pattern2 = "" + match2->Groups[4]; //Результат поиска 2
+		Regex^ rg1 = gcnew Regex("<NumCode>(.*?)</NumCode><CharCode>" + comboBox1->Text + "</CharCode><Nominal>(.*?)</Nominal><Name>(.*?)</Name><Value>(.*?)</Value>"); //РЁР°Р±Р»РѕРЅ РґР»СЏ РїРѕРёСЃРєР° 1
+		Regex^ rg2 = gcnew Regex("<NumCode>(.*?)</NumCode><CharCode>" + comboBox2->Text + "</CharCode><Nominal>(.*?)</Nominal><Name>(.*?)</Name><Value>(.*?)</Value>"); //РЁР°Р±Р»РѕРЅ РґР»СЏ РїРѕРёСЃРєР° 2
+		Match^ match1 = rg1->Match(line); //РџРѕРёСЃРє РїРѕ С€Р°Р±Р»РѕРЅСѓ 1
+		Match^ match2 = rg2->Match(line); //РџРѕРёСЃРє РїРѕ С€Р°Р±Р»РѕРЅСѓ 2
+		pattern1 = "" + match1->Groups[4]; //Р РµР·СѓР»СЊС‚Р°С‚ РїРѕРёСЃРєР° 1
+		pattern2 = "" + match2->Groups[4]; //Р РµР·СѓР»СЊС‚Р°С‚ РїРѕРёСЃРєР° 2
 	}
-	//Исключения шаблона для рубля
+	//РСЃРєР»СЋС‡РµРЅРёСЏ С€Р°Р±Р»РѕРЅР° РґР»СЏ СЂСѓР±Р»СЏ
 	if(comboBox1->Text == "RUB")
 	{
 		Regex^ rg2 = gcnew Regex("<NumCode>(.*?)</NumCode><CharCode>" + comboBox2->Text + "</CharCode><Nominal>(.*?)</Nominal><Name>(.*?)</Name><Value>(.*?)</Value>");
@@ -456,7 +456,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	}
 
 	//----------------------------------------------------------------------------------------------------//
-	// Доступные валюты:
+	// Р”РѕСЃС‚СѓРїРЅС‹Рµ РІР°Р»СЋС‚С‹:
 	//----------------------------------------------------------------------------------------------------//
 
 	double USD_RUB;
@@ -467,13 +467,13 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	double UAH_RUB;
 
 	//----------------------------------------------------------------------------------------------------//
-	// Добавим возможность указывать кол-во переводимой валюты
+	// Р”РѕР±Р°РІРёРј РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ СѓРєР°Р·С‹РІР°С‚СЊ РєРѕР»-РІРѕ РїРµСЂРµРІРѕРґРёРјРѕР№ РІР°Р»СЋС‚С‹
 	//----------------------------------------------------------------------------------------------------//
 
 	double Namenal = System::Convert::ToDouble(numericUpDown1->Value);
 
 	//----------------------------------------------------------------------------------------------------//
-	// Условия для конвертации и присваивания
+	// РЈСЃР»РѕРІРёСЏ РґР»СЏ РєРѕРЅРІРµСЂС‚Р°С†РёРё Рё РїСЂРёСЃРІР°РёРІР°РЅРёСЏ
 	//----------------------------------------------------------------------------------------------------//
 
 	if (comboBox2->Text == "RUB" && comboBox1->Text != "RUB")
@@ -523,10 +523,10 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	}
 	
 	//----------------------------------------------------------------------------------------------------//
-	// Конвертирование валют и их подсчёт
+	// РљРѕРЅРІРµСЂС‚РёСЂРѕРІР°РЅРёРµ РІР°Р»СЋС‚ Рё РёС… РїРѕРґСЃС‡С‘С‚
 	//----------------------------------------------------------------------------------------------------//
 
-	if (comboBox1->Text == "RUB") // RUB - Подсчет для Рублей
+	if (comboBox1->Text == "RUB") // RUB - РџРѕРґСЃС‡РµС‚ РґР»СЏ Р СѓР±Р»РµР№
 	{
 		if (comboBox2->Text == "USD")
 		{
@@ -564,7 +564,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		}
 	}
 
-	else if (comboBox1->Text == "USD") // USD - Подсчет для Американского Доллара
+	else if (comboBox1->Text == "USD") // USD - РџРѕРґСЃС‡РµС‚ РґР»СЏ РђРјРµСЂРёРєР°РЅСЃРєРѕРіРѕ Р”РѕР»Р»Р°СЂР°
 	{
 		if (comboBox2->Text == "RUB")
 		{
@@ -600,7 +600,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 			Namenal /= 1;
 		}
 	}
-	else if (comboBox1->Text == "EUR") // EUR - Подсчет для Евро
+	else if (comboBox1->Text == "EUR") // EUR - РџРѕРґСЃС‡РµС‚ РґР»СЏ Р•РІСЂРѕ
 	{
 		if (comboBox2->Text == "RUB")
 		{
@@ -637,7 +637,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		}
 	}
 
-	else if (comboBox1->Text == "AUD") // AUD - Подсчет для Австралийский доллар
+	else if (comboBox1->Text == "AUD") // AUD - РџРѕРґСЃС‡РµС‚ РґР»СЏ РђРІСЃС‚СЂР°Р»РёР№СЃРєРёР№ РґРѕР»Р»Р°СЂ
 	{
 		if (comboBox2->Text == "RUB")
 		{
@@ -674,7 +674,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		}
 	}
 
-	else if (comboBox1->Text == "JPY") // JPY - Подсчет для Японской Йены
+	else if (comboBox1->Text == "JPY") // JPY - РџРѕРґСЃС‡РµС‚ РґР»СЏ РЇРїРѕРЅСЃРєРѕР№ Р™РµРЅС‹
 	{
 		if (comboBox2->Text == "RUB")
 		{
@@ -711,7 +711,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		}
 	}
 
-	else if (comboBox1->Text == "GBP") // GBP - Подсчет для Фунт стерлингов
+	else if (comboBox1->Text == "GBP") // GBP - РџРѕРґСЃС‡РµС‚ РґР»СЏ Р¤СѓРЅС‚ СЃС‚РµСЂР»РёРЅРіРѕРІ
 	{
 		if (comboBox2->Text == "RUB")
 		{
@@ -748,7 +748,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		}
 	}
 
-	else if (comboBox1->Text == "UAH") // UAH - Подсчет для Гривны
+	else if (comboBox1->Text == "UAH") // UAH - РџРѕРґСЃС‡РµС‚ РґР»СЏ Р“СЂРёРІРЅС‹
 	{
 		if (comboBox2->Text == "RUB")
 		{
@@ -785,15 +785,15 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		}
 	}
 	//----------------------------------------------------------------------------------------------------//
-	//------------------------------------Вывод-на-label2-------------------------------------------------//
+	//------------------------------------Р’С‹РІРѕРґ-РЅР°-label2-------------------------------------------------//
 	//----------------------------------------------------------------------------------------------------//
-	if (((comboBox1->Text != "GBP") && (comboBox1->Text != "JPY") && (comboBox1->Text != "UAH") && (comboBox1->Text != "EUR") && (comboBox1->Text != "USD") && (comboBox1->Text != "AUD") && (comboBox1->Text != "RUB")) || ((comboBox2->Text != "JPY") && (comboBox2->Text != "GBP") && (comboBox2->Text != "UAH") && (comboBox2->Text != "EUR") && (comboBox2->Text != "USD") && (comboBox2->Text != "AUD") && (comboBox2->Text != "RUB"))) // Исключение, если поля не заполнены
+	if (((comboBox1->Text != "GBP") && (comboBox1->Text != "JPY") && (comboBox1->Text != "UAH") && (comboBox1->Text != "EUR") && (comboBox1->Text != "USD") && (comboBox1->Text != "AUD") && (comboBox1->Text != "RUB")) || ((comboBox2->Text != "JPY") && (comboBox2->Text != "GBP") && (comboBox2->Text != "UAH") && (comboBox2->Text != "EUR") && (comboBox2->Text != "USD") && (comboBox2->Text != "AUD") && (comboBox2->Text != "RUB"))) // РСЃРєР»СЋС‡РµРЅРёРµ, РµСЃР»Рё РїРѕР»СЏ РЅРµ Р·Р°РїРѕР»РЅРµРЅС‹
 	{
-		label2->Text = "Error:\nЗаполните необходимые поля.\n ";
+		label2->Text = "Error:\nР—Р°РїРѕР»РЅРёС‚Рµ РЅРµРѕР±С…РѕРґРёРјС‹Рµ РїРѕР»СЏ.\n ";
 	}
 	else
 	{
-		label2->Text = "Курс на " + dateTimePicker1 -> Value.ToLongDateString() +"\nсостовляет:\n" + numericUpDown1->Value + " " + comboBox1->Text + " = " + round(Namenal * 100) / 100 + " " + comboBox2->Text; //Вывод результата
+		label2->Text = "РљСѓСЂСЃ РЅР° " + dateTimePicker1 -> Value.ToLongDateString() +"\nСЃРѕСЃС‚РѕРІР»СЏРµС‚:\n" + numericUpDown1->Value + " " + comboBox1->Text + " = " + round(Namenal * 100) / 100 + " " + comboBox2->Text; //Р’С‹РІРѕРґ СЂРµР·СѓР»СЊС‚Р°С‚Р°
 	}
 }
 private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -808,14 +808,14 @@ private: System::Void numericUpDown1_ValueChanged(System::Object^ sender, System
 private: System::Void dateTimePicker1_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 	//----------------------------------------------------------------------------------------------------//
-	//-------------------------------------Очистка-формы--------------------------------------------------//
+	//-------------------------------------РћС‡РёСЃС‚РєР°-С„РѕСЂРјС‹--------------------------------------------------//
 	//----------------------------------------------------------------------------------------------------//
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	label8->Text="";
-	label1->Text = "Калькулятор Валюты:";
+	label1->Text = "РљР°Р»СЊРєСѓР»СЏС‚РѕСЂ Р’Р°Р»СЋС‚С‹:";
 	label2->Text = "";
-	label7->Text = "Аксёнов Дмитрий РИС-21-1б";
+	label7->Text = "РђРєСЃС‘РЅРѕРІ Р”РјРёС‚СЂРёР№ Р РРЎ-21-1Р±";
 
 }
 
@@ -848,13 +848,13 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 
 
 //----------------------------------------------------------------------------------------------------//
-//-----------------------------------------Пасхальный-------------------------------------------------//
+//-----------------------------------------РџР°СЃС…Р°Р»СЊРЅС‹Р№-------------------------------------------------//
 //----------------------------------------------------------------------------------------------------//
 
 
 
 private: System::Void label8_Click(System::Object^ sender, System::EventArgs^ e) {
-	label8->Text = "Политех - это круто!";
+	label8->Text = "РџРѕР»РёС‚РµС… - СЌС‚Рѕ РєСЂСѓС‚Рѕ!";
 	if (flag == true)
 	{
 	   lol1 += 1;
@@ -869,12 +869,12 @@ private: System::Void label8_Click(System::Object^ sender, System::EventArgs^ e)
 	}
 }
 private: System::Void label7_Click(System::Object^ sender, System::EventArgs^ e) {
-	label7->Text = "Аксёнов Дмитрий РИС-21-1б::-::GitHub -> https://github.com/AxyonovDmitry";
+	label7->Text = "РђРєСЃС‘РЅРѕРІ Р”РјРёС‚СЂРёР№ Р РРЎ-21-1Р±::-::GitHub -> https://github.com/AxyonovDmitry";
 	if (flag == true && flag1 == true)
 	{
 		flag = false;
 		flag1 = false;
-		label2->Text = "Поздравляю!\nТы нашел пасхалку\nМолодец, и что теперь?";
+		label2->Text = "РџРѕР·РґСЂР°РІР»СЏСЋ!\nРўС‹ РЅР°С€РµР» РїР°СЃС…Р°Р»РєСѓ\nРњРѕР»РѕРґРµС†, Рё С‡С‚Рѕ С‚РµРїРµСЂСЊ?";
 	}
 }
 private: System::Void pictureBox3_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -882,7 +882,7 @@ private: System::Void pictureBox3_Click(System::Object^ sender, System::EventArg
 	if (lol >= 10)
 	{
 		lol = 0;
-		label8->Text = "Нажимай на меня";
+		label8->Text = "РќР°Р¶РёРјР°Р№ РЅР° РјРµРЅСЏ";
 		flag = true;
 	}
 }
