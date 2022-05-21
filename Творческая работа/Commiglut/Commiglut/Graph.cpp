@@ -1,20 +1,20 @@
 #include "Graph.h"
 using namespace std;
-int WinW = 900, WinH = 600; //Ширина и высота окна
-int R; //Радиус круга
-bool ButtonSalesmanSecond = false; //флаг на подробное решение задачи о коммивояжере
-bool* vertmouse = new bool[maxSize]; // указатель на флаг перемещения вершин
-bool standView = false; //стандартный вид
-bool vertmove = false; // флаг перемещения вершин
-int ButtonCheck; // проверка кнопки
-int Moving_Vertex; // перемещение вершин
-int x_coord_mouse; // x координа мыши
-int y_coord_mouse; // y координа мыши
+int WinW = 900, WinH = 600; //РЁРёСЂРёРЅР° Рё РІС‹СЃРѕС‚Р° РѕРєРЅР°
+int R; //Р Р°РґРёСѓСЃ РєСЂСѓРіР°
+bool ButtonSalesmanSecond = false; //С„Р»Р°Рі РЅР° РїРѕРґСЂРѕР±РЅРѕРµ СЂРµС€РµРЅРёРµ Р·Р°РґР°С‡Рё Рѕ РєРѕРјРјРёРІРѕСЏР¶РµСЂРµ
+bool* vertmouse = new bool[maxSize]; // СѓРєР°Р·Р°С‚РµР»СЊ РЅР° С„Р»Р°Рі РїРµСЂРµРјРµС‰РµРЅРёСЏ РІРµСЂС€РёРЅ
+bool standView = false; //СЃС‚Р°РЅРґР°СЂС‚РЅС‹Р№ РІРёРґ
+bool vertmove = false; // С„Р»Р°Рі РїРµСЂРµРјРµС‰РµРЅРёСЏ РІРµСЂС€РёРЅ
+int ButtonCheck; // РїСЂРѕРІРµСЂРєР° РєРЅРѕРїРєРё
+int Moving_Vertex; // РїРµСЂРµРјРµС‰РµРЅРёРµ РІРµСЂС€РёРЅ
+int x_coord_mouse; // x РєРѕРѕСЂРґРёРЅР° РјС‹С€Рё
+int y_coord_mouse; // y РєРѕРѕСЂРґРёРЅР° РјС‹С€Рё
 VertexCoord vertcrd[maxSize + 2];
 Graph graph;
 vector<pair<int, int>> Way;
 vector<int> New_Way;
-Graph::Graph() //Конструктор
+Graph::Graph() //РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 {
 	for (int i = 0; i < maxSize; i++)
 	{
@@ -25,11 +25,11 @@ Graph::Graph() //Конструктор
 		vertmouse[i] = false;
 	}
 }
-Graph::~Graph() //Деструктор
+Graph::~Graph() //Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 {
 
 }
-int Graph::GetVertPos(const int& vertex) //Метод получения положения вершины
+int Graph::GetVertPos(const int& vertex) //РњРµС‚РѕРґ РїРѕР»СѓС‡РµРЅРёСЏ РїРѕР»РѕР¶РµРЅРёСЏ РІРµСЂС€РёРЅС‹
 {
 	for (size_t i = 0; i < vertList.size(); i++)
 	{
@@ -38,27 +38,27 @@ int Graph::GetVertPos(const int& vertex) //Метод получения положения вершины
 	}
 	return -1;
 }
-int Graph::GetVertText(int i) //Метод получения текста вершины
+int Graph::GetVertText(int i) //РњРµС‚РѕРґ РїРѕР»СѓС‡РµРЅРёСЏ С‚РµРєСЃС‚Р° РІРµСЂС€РёРЅС‹
 {
 	return vertList[i];
 }
-vector<int> Graph::GetVertList()  //Метод получения списка вершин
+vector<int> Graph::GetVertList()  //РњРµС‚РѕРґ РїРѕР»СѓС‡РµРЅРёСЏ СЃРїРёСЃРєР° РІРµСЂС€РёРЅ
 {
 	return  vertList;
 }
-int Graph::GetAdjMatrixElem(int i, int j) //Метод получения элементов матрицы смежности
+int Graph::GetAdjMatrixElem(int i, int j) //РњРµС‚РѕРґ РїРѕР»СѓС‡РµРЅРёСЏ СЌР»РµРјРµРЅС‚РѕРІ РјР°С‚СЂРёС†С‹ СЃРјРµР¶РЅРѕСЃС‚Рё
 {
 	return adjMatrix[i][j];
 }
-int Graph::GetAmountVerts() //Метод получения кол-ва вершин
+int Graph::GetAmountVerts() //РњРµС‚РѕРґ РїРѕР»СѓС‡РµРЅРёСЏ РєРѕР»-РІР° РІРµСЂС€РёРЅ
 {
 	return vertList.size();
 }
-void Graph::SetEdgeZero(int i, int j) //Метод зануления ребер
+void Graph::SetEdgeZero(int i, int j) //РњРµС‚РѕРґ Р·Р°РЅСѓР»РµРЅРёСЏ СЂРµР±РµСЂ
 {
 	adjMatrix[i][j] = 0; adjMatrix[j][i] = 0;
 }
-bool Graph::IsEmpty() //Метод если граф пуст
+bool Graph::IsEmpty() //РњРµС‚РѕРґ РµСЃР»Рё РіСЂР°С„ РїСѓСЃС‚
 {
 	if (vertList.size() != 0) {
 		return false;
@@ -67,22 +67,22 @@ bool Graph::IsEmpty() //Метод если граф пуст
 		return true;
 	}
 }
-bool Graph::IsFull() //Метод если граф полон
+bool Graph::IsFull() //РњРµС‚РѕРґ РµСЃР»Рё РіСЂР°С„ РїРѕР»РѕРЅ
 {
 	return (vertList.size() == maxSize);
 }
-void Graph::InsertVertex(const int& vertex) //Метод ввода вершин
+void Graph::InsertVertex(const int& vertex) //РњРµС‚РѕРґ РІРІРѕРґР° РІРµСЂС€РёРЅ
 { 
 	if (!IsFull()) {
 		vertList.push_back(vertex);
 	}
 	else
 	{
-		cout << "Граф уже заполнен. Невозможно добавить новую вершину" << endl;
+		cout << "Р“СЂР°С„ СѓР¶Рµ Р·Р°РїРѕР»РЅРµРЅ. РќРµРІРѕР·РјРѕР¶РЅРѕ РґРѕР±Р°РІРёС‚СЊ РЅРѕРІСѓСЋ РІРµСЂС€РёРЅСѓ" << endl;
 		return;
 	}
 }
-void Graph::InsertEdge(const int& vertex1, const int& vertex2, int weight) //Метод ввода ребер
+void Graph::InsertEdge(const int& vertex1, const int& vertex2, int weight) //РњРµС‚РѕРґ РІРІРѕРґР° СЂРµР±РµСЂ
 {
 
 	if (GetVertPos(vertex1) != (-1) && GetVertPos(vertex2) != (-1))
@@ -91,7 +91,7 @@ void Graph::InsertEdge(const int& vertex1, const int& vertex2, int weight) //Мет
 		int vertPos2 = GetVertPos(vertex2);
 		if (adjMatrix[vertPos1][vertPos2] != 0 || adjMatrix[vertPos2][vertPos1] != 0)
 		{
-			cout << "Ребро между вершинами уже есть" << endl;
+			cout << "Р РµР±СЂРѕ РјРµР¶РґСѓ РІРµСЂС€РёРЅР°РјРё СѓР¶Рµ РµСЃС‚СЊ" << endl;
 			return;
 		}
 		else
@@ -103,25 +103,25 @@ void Graph::InsertEdge(const int& vertex1, const int& vertex2, int weight) //Мет
 	{
 		if (weight < 1)
 		{
-			cout << "\nДанная величина веса некорректна\n";
+			cout << "\nР”Р°РЅРЅР°СЏ РІРµР»РёС‡РёРЅР° РІРµСЃР° РЅРµРєРѕСЂСЂРµРєС‚РЅР°\n";
 		}
 		else {
-			cout << "Обеих вершин (или одной из них) нет в графе" << endl; cout << "Исходная вершина: ";
+			cout << "РћР±РµРёС… РІРµСЂС€РёРЅ (РёР»Рё РѕРґРЅРѕР№ РёР· РЅРёС…) РЅРµС‚ РІ РіСЂР°С„Рµ" << endl; cout << "РСЃС…РѕРґРЅР°СЏ РІРµСЂС€РёРЅР°: ";
 		}
 		int sourceVertex, targetVertex, edgeWeight;
 		cin >> sourceVertex;
-		cout << "Конечная вершина: ";
+		cout << "РљРѕРЅРµС‡РЅР°СЏ РІРµСЂС€РёРЅР°: ";
 		cin >> targetVertex;
-		cout << "Вес ребра: ";
+		cout << "Р’РµСЃ СЂРµР±СЂР°: ";
 		cin >> edgeWeight;
 		graph.InsertEdge(sourceVertex, targetVertex, edgeWeight);
 	}
 }
-void Graph::Print() //Метод вывода
+void Graph::Print() //РњРµС‚РѕРґ РІС‹РІРѕРґР°
 {
 	if (!IsEmpty())
 	{
-		cout << "Матрица смежности графа: " << endl;
+		cout << "РњР°С‚СЂРёС†Р° СЃРјРµР¶РЅРѕСЃС‚Рё РіСЂР°С„Р°: " << endl;
 		for (int i = 0; i < vertList.size(); i++)
 		{
 			cout << vertList[i] << " ";
@@ -131,14 +131,14 @@ void Graph::Print() //Метод вывода
 		}
 	}
 	else {
-		cout << "\nГраф пуст\n" << endl;
+		cout << "\nР“СЂР°С„ РїСѓСЃС‚\n" << endl;
 	}
 }
-void Graph::EraseLastVert() //Метод удаления последней вершины
+void Graph::EraseLastVert() //РњРµС‚РѕРґ СѓРґР°Р»РµРЅРёСЏ РїРѕСЃР»РµРґРЅРµР№ РІРµСЂС€РёРЅС‹
 {
 	if (IsEmpty())
 	{
-		cout << "\nГраф пуст\n";
+		cout << "\nР“СЂР°С„ РїСѓСЃС‚\n";
 		return;
 	}
 	int n = vertList.size();
@@ -149,7 +149,7 @@ void Graph::EraseLastVert() //Метод удаления последней вершины
 	}
 	vertList.pop_back();
 }
-void Graph::EraseEdge(const int& vertex1, const int& vertex2) //Метод удаления ребра
+void Graph::EraseEdge(const int& vertex1, const int& vertex2) //РњРµС‚РѕРґ СѓРґР°Р»РµРЅРёСЏ СЂРµР±СЂР°
 {
 	if (GetVertPos(vertex1) != (-1) && GetVertPos(vertex2) != (-1))
 	{
@@ -162,17 +162,17 @@ void Graph::EraseEdge(const int& vertex1, const int& vertex2) //Метод удаления р
 		}
 		else
 		{
-			cout << "Ребра между данными вершинами нет\n" << endl;
+			cout << "Р РµР±СЂР° РјРµР¶РґСѓ РґР°РЅРЅС‹РјРё РІРµСЂС€РёРЅР°РјРё РЅРµС‚\n" << endl;
 			return;
 		}
 	}
 	else
 	{
-		cout << "Обеих вершин (или одной из них) нет в графе" << endl;
+		cout << "РћР±РµРёС… РІРµСЂС€РёРЅ (РёР»Рё РѕРґРЅРѕР№ РёР· РЅРёС…) РЅРµС‚ РІ РіСЂР°С„Рµ" << endl;
 		return;
 	}
 }
-int Graph::GetAmountEdges() //Метод получения кол-ва ребер
+int Graph::GetAmountEdges() //РњРµС‚РѕРґ РїРѕР»СѓС‡РµРЅРёСЏ РєРѕР»-РІР° СЂРµР±РµСЂ
 {
 	int numb = 0;
 	for (int i = 0; i < vertList.size(); i++)
@@ -187,7 +187,7 @@ int Graph::GetAmountEdges() //Метод получения кол-ва ребер
 	}
 	return numb;
 }
-void Graph::DrawGraph() //Метод отрисовки графа
+void Graph::DrawGraph() //РњРµС‚РѕРґ РѕС‚СЂРёСЃРѕРІРєРё РіСЂР°С„Р°
 {
 	int n = graph.GetAmountVerts();
 	for (int i = 0; i < n; i++)
@@ -212,13 +212,13 @@ void Graph::DrawGraph() //Метод отрисовки графа
 	drawVertex(n);
 	glutPostRedisplay();
 }
-void makeGraph() //Метод создания графа
+void makeGraph() //РњРµС‚РѕРґ СЃРѕР·РґР°РЅРёСЏ РіСЂР°С„Р°
 {
 	standView = false;
 	int amountVerts, amountEdges, sourceVertex, targetVertex, edgeWeight;
-	cout << "Введите количество вершин в графе: ";
+	cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ РІРµСЂС€РёРЅ РІ РіСЂР°С„Рµ: ";
 	cin >> amountVerts;
-	cout << "Введите количество ребер в графе: ";
+	cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЂРµР±РµСЂ РІ РіСЂР°С„Рµ: ";
 	cin >> amountEdges;
 	for (int i = 1; i <= amountVerts; i++) {
 
@@ -226,18 +226,18 @@ void makeGraph() //Метод создания графа
 	}
 	for (int i = 0; i < amountEdges; i++)
 	{
-		cout << "Исходная вершина: ";
+		cout << "РСЃС…РѕРґРЅР°СЏ РІРµСЂС€РёРЅР°: ";
 		cin >> sourceVertex;
-		cout << "Конечная вершина: ";
+		cout << "РљРѕРЅРµС‡РЅР°СЏ РІРµСЂС€РёРЅР°: ";
 		cin >> targetVertex;
-		cout << "Вес ребра: ";
+		cout << "Р’РµСЃ СЂРµР±СЂР°: ";
 		cin >> edgeWeight;
 		graph.InsertEdge(sourceVertex, targetVertex, edgeWeight);
 	}
 	cout << endl;
 	graph.Print();
 }
-void reshape(int w, int h) //Метод изменения
+void reshape(int w, int h) //РњРµС‚РѕРґ РёР·РјРµРЅРµРЅРёСЏ
 {
 	WinW = w;
 	WinH = h;
@@ -247,7 +247,7 @@ void reshape(int w, int h) //Метод изменения
 	gluOrtho2D(0, (GLdouble)WinW, 0, (GLdouble)WinH);
 	glutPostRedisplay();
 }
-void display() //Метод вызова дисплея
+void display() //РњРµС‚РѕРґ РІС‹Р·РѕРІР° РґРёСЃРїР»РµСЏ
 {
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
@@ -264,7 +264,7 @@ void display() //Метод вызова дисплея
 	graph.DrawGraph();
 	glutSwapBuffers();
 }
-int** Change_Matrix() //Метод изменения матрицы
+int** Change_Matrix() //РњРµС‚РѕРґ РёР·РјРµРЅРµРЅРёСЏ РјР°С‚СЂРёС†С‹
 {
 	int n = graph.GetAmountVerts();
 	int** matrix = new int* [n];
@@ -285,12 +285,12 @@ int** Change_Matrix() //Метод изменения матрицы
 		}
 	}
 	if (ButtonSalesmanSecond == true) {
-		cout << "Начальная матрица: \n";
+		cout << "РќР°С‡Р°Р»СЊРЅР°СЏ РјР°С‚СЂРёС†Р°: \n";
 		Print_Matrix(matrix);
 	}
 	return matrix;
 }
-int* Search_MinElem(int* line, int n) //Метод поиска минимального элемента
+int* Search_MinElem(int* line, int n) //РњРµС‚РѕРґ РїРѕРёСЃРєР° РјРёРЅРёРјР°Р»СЊРЅРѕРіРѕ СЌР»РµРјРµРЅС‚Р°
 {
 	int min = 1000000;
 	for (int j = 0; j < n; j++) {
@@ -305,7 +305,7 @@ int* Search_MinElem(int* line, int n) //Метод поиска минимального элемента
 	}
 	return line;
 }
-void Print_Matrix(int** matrix) //Метод вывод матрицы
+void Print_Matrix(int** matrix) //РњРµС‚РѕРґ РІС‹РІРѕРґ РјР°С‚СЂРёС†С‹
 {
 	int n = graph.GetAmountVerts();
 	for (int i = 0; i < n; i++)
@@ -316,7 +316,7 @@ void Print_Matrix(int** matrix) //Метод вывод матрицы
 		cout << endl;
 	}
 }
-int** Reduct_Matrix(int** oldmatrix) //Метод матрица сокращения
+int** Reduct_Matrix(int** oldmatrix) //РњРµС‚РѕРґ РјР°С‚СЂРёС†Р° СЃРѕРєСЂР°С‰РµРЅРёСЏ
 {
 	int** matrix = oldmatrix;
 	int n = graph.GetAmountVerts();
@@ -340,12 +340,12 @@ int** Reduct_Matrix(int** oldmatrix) //Метод матрица сокращения
 		}
 	}
 	if (ButtonSalesmanSecond == true) {
-		cout << "\nРедуцированная матрица: \n";
+		cout << "\nР РµРґСѓС†РёСЂРѕРІР°РЅРЅР°СЏ РјР°С‚СЂРёС†Р°: \n";
 		Print_Matrix(matrix);
 	}
 	return matrix;
 }
-int** High_Zero(int** oldmatrix) //Метод удаления 0 с наибольшей оценкой
+int** High_Zero(int** oldmatrix) //РњРµС‚РѕРґ СѓРґР°Р»РµРЅРёСЏ 0 СЃ РЅР°РёР±РѕР»СЊС€РµР№ РѕС†РµРЅРєРѕР№
 {
 	int n = graph.GetAmountVerts();
 	int** matrix = Reduct_Matrix(oldmatrix);
@@ -393,9 +393,9 @@ int** High_Zero(int** oldmatrix) //Метод удаления 0 с наибольшей оценкой
 	}
 	if (ButtonSalesmanSecond == true) {
 		cout << endl;
-		cout << "Матрица после удаления 0 с наибольшей оценкой: \n";
+		cout << "РњР°С‚СЂРёС†Р° РїРѕСЃР»Рµ СѓРґР°Р»РµРЅРёСЏ 0 СЃ РЅР°РёР±РѕР»СЊС€РµР№ РѕС†РµРЅРєРѕР№: \n";
 		Print_Matrix(matrix);
-		cout << "\nПромежуточные отрезки путей: ";
+		cout << "\nРџСЂРѕРјРµР¶СѓС‚РѕС‡РЅС‹Рµ РѕС‚СЂРµР·РєРё РїСѓС‚РµР№: ";
 		for (int i = 0; i < Way.size(); i++) {
 			cout << Way[i].first << " -> " << Way[i].second;
 		}
@@ -403,7 +403,7 @@ int** High_Zero(int** oldmatrix) //Метод удаления 0 с наибольшей оценкой
 	}
 	return matrix;
 }
-void Print_Result() //Метод вывода результата
+void Print_Result() //РњРµС‚РѕРґ РІС‹РІРѕРґР° СЂРµР·СѓР»СЊС‚Р°С‚Р°
 {
 	int second = Way[0].second;
 	int i = 2;
@@ -418,7 +418,7 @@ void Print_Result() //Метод вывода результата
 				i++;
 			}
 		}
-	cout << "Кротчайший путь :  ";
+	cout << "РљСЂРѕС‚С‡Р°Р№С€РёР№ РїСѓС‚СЊ :  ";
 	for (int i = 0; i < New_Way.size(); i++)
 	{
 		cout << New_Way[i];
@@ -433,9 +433,9 @@ void Print_Result() //Метод вывода результата
 		int column = Way[i].second - 1;
 		sum += graph.GetAdjMatrixElem(line, column);
 	}
-	cout << "\nДлина пути : " << sum << endl;;
+	cout << "\nР”Р»РёРЅР° РїСѓС‚Рё : " << sum << endl;;
 }
-void setCoords(int i, int n) //Метод установки координат
+void setCoords(int i, int n) //РњРµС‚РѕРґ СѓСЃС‚Р°РЅРѕРІРєРё РєРѕРѕСЂРґРёРЅР°С‚
 {
 	int rad;
 	int x0 = WinW / 2;
@@ -456,7 +456,7 @@ void setCoords(int i, int n) //Метод установки координат
 	vertcrd[i].x = x1;
 	vertcrd[i].y = y1;
 }
-bool SalesmanPossible(int** matrix) //Метод возможности задачи о коммивояжере
+bool SalesmanPossible(int** matrix) //РњРµС‚РѕРґ РІРѕР·РјРѕР¶РЅРѕСЃС‚Рё Р·Р°РґР°С‡Рё Рѕ РєРѕРјРјРёРІРѕСЏР¶РµСЂРµ
 {
 	if (graph.IsEmpty())
 	{
@@ -477,7 +477,7 @@ bool SalesmanPossible(int** matrix) //Метод возможности задачи о коммивояжере
 	}
 	return true;
 }
-int ClickOnCircle(int x, int y) //Метод нажатия на круг
+int ClickOnCircle(int x, int y) //РњРµС‚РѕРґ РЅР°Р¶Р°С‚РёСЏ РЅР° РєСЂСѓРі
 {
 	for (int i = 0; i < graph.GetAmountVerts(); i++) {
 		if (pow(x - vertcrd[i].x, 2) + pow(y - vertcrd[i].y, 2) <= pow(R, 2)) {
@@ -486,7 +486,7 @@ int ClickOnCircle(int x, int y) //Метод нажатия на круг
 	}
 	return -1;
 }
-void ButtonMouseOn(int x, int y) //Метод нажатия кнопки мыши
+void ButtonMouseOn(int x, int y) //РњРµС‚РѕРґ РЅР°Р¶Р°С‚РёСЏ РєРЅРѕРїРєРё РјС‹С€Рё
 {
 	if (x > 10 && x < WinW / 7 && y > WinH - WinH / 10 && y < WinH - 20)
 	{
@@ -528,7 +528,7 @@ void ButtonMouseOn(int x, int y) //Метод нажатия кнопки мыши
 		}
 	}
 }
-void mouseMove(int x, int y) //Метод движения курсора
+void mouseMove(int x, int y) //РњРµС‚РѕРґ РґРІРёР¶РµРЅРёСЏ РєСѓСЂСЃРѕСЂР°
 {
 	y = WinH - y;
 	x_coord_mouse = x;
@@ -550,7 +550,7 @@ void mouseMove(int x, int y) //Метод движения курсора
 	ButtonMouseOn(x, y);
 	glutPostRedisplay();
 }
-void mouseClick(int button, int state, int x, int y) //Метод клика мыши
+void mouseClick(int button, int state, int x, int y) //РњРµС‚РѕРґ РєР»РёРєР° РјС‹С€Рё
 {
 	int j = ClickOnCircle(x, WinH - y);
 	if (vertmove)
@@ -578,12 +578,12 @@ void mouseClick(int button, int state, int x, int y) //Метод клика мыши
 			if (ButtonSalesmanSecond == false) {
 				New_Way.clear();
 				Way.clear();
-				cout << "\nЗадача Коммивояжера:\n";
+				cout << "\nР—Р°РґР°С‡Р° РљРѕРјРјРёРІРѕСЏР¶РµСЂР°:\n";
 				int** matrix = Change_Matrix();
 				bool checker = SalesmanPossible(matrix);
 				if (!checker)
 				{
-					cout << "\nДля данного графа нельзя выполнить задачу коммивояжера\n";
+					cout << "\nР”Р»СЏ РґР°РЅРЅРѕРіРѕ РіСЂР°С„Р° РЅРµР»СЊР·СЏ РІС‹РїРѕР»РЅРёС‚СЊ Р·Р°РґР°С‡Сѓ РєРѕРјРјРёРІРѕСЏР¶РµСЂР°\n";
 					return;
 				}
 				int n = graph.GetAmountVerts();
@@ -593,7 +593,7 @@ void mouseClick(int button, int state, int x, int y) //Метод клика мыши
 				cout << endl;
 				ButtonSalesmanSecond = true;
 				Print_Result();
-				cout << "\nДля подробного решения еще раз нажмите на Salesman\n";
+				cout << "\nР”Р»СЏ РїРѕРґСЂРѕР±РЅРѕРіРѕ СЂРµС€РµРЅРёСЏ РµС‰Рµ СЂР°Р· РЅР°Р¶РјРёС‚Рµ РЅР° Salesman\n";
 				return;
 			}
 			else {
@@ -656,11 +656,11 @@ void mouseClick(int button, int state, int x, int y) //Метод клика мыши
 		{
 			ButtonSalesmanSecond = false;
 			int sourceVertex, targetVertex, edgeWeight;
-			cout << "Исходная вершина: ";
+			cout << "РСЃС…РѕРґРЅР°СЏ РІРµСЂС€РёРЅР°: ";
 			cin >> sourceVertex;
-			cout << "Конечная вершина: ";
+			cout << "РљРѕРЅРµС‡РЅР°СЏ РІРµСЂС€РёРЅР°: ";
 			cin >> targetVertex;
-			cout << "Вес ребра: ";
+			cout << "Р’РµСЃ СЂРµР±СЂР°: ";
 			cin >> edgeWeight;
 			graph.InsertEdge(sourceVertex, targetVertex, edgeWeight);
 			return;
@@ -672,16 +672,16 @@ void mouseClick(int button, int state, int x, int y) //Метод клика мыши
 		{
 			ButtonSalesmanSecond = false;
 			int sourceVertex, targetVertex;
-			cout << "Исходная вершина: ";
+			cout << "РСЃС…РѕРґРЅР°СЏ РІРµСЂС€РёРЅР°: ";
 			cin >> sourceVertex;
-			cout << "Конечная вершина: ";
+			cout << "РљРѕРЅРµС‡РЅР°СЏ РІРµСЂС€РёРЅР°: ";
 			cin >> targetVertex;
 			graph.EraseEdge(sourceVertex, targetVertex);
 			return;
 		}
 	}
 }
-void drawBtnSalesman() //Метод отрисови кнопки задача коммивояжера
+void drawBtnSalesman() //РњРµС‚РѕРґ РѕС‚СЂРёСЃРѕРІРё РєРЅРѕРїРєРё Р·Р°РґР°С‡Р° РєРѕРјРјРёРІРѕСЏР¶РµСЂР°
 {
 	if (ButtonCheck == 1) {
 		glColor3f(0.603, 0.803, 0.196);
@@ -708,7 +708,7 @@ void drawBtnSalesman() //Метод отрисови кнопки задача коммивояжера
 		glutBitmapCharacter(GLUT_BITMAP_8_BY_13, name[i]);
 	}
 }
-void drawBtnNewGraph() //Метод отрисови кнопки создания нового графа
+void drawBtnNewGraph() //РњРµС‚РѕРґ РѕС‚СЂРёСЃРѕРІРё РєРЅРѕРїРєРё СЃРѕР·РґР°РЅРёСЏ РЅРѕРІРѕРіРѕ РіСЂР°С„Р°
 {
 	if (ButtonCheck == 2) {
 		glColor3f(0.603, 0.803, 0.196);
@@ -740,7 +740,7 @@ void drawBtnNewGraph() //Метод отрисови кнопки создания нового графа
 		glutBitmapCharacter(GLUT_BITMAP_8_BY_13, name1[i]);
 	}
 }
-void drawBtnAddVertex() //Метод отрисови кнопки добавления вершины
+void drawBtnAddVertex() //РњРµС‚РѕРґ РѕС‚СЂРёСЃРѕРІРё РєРЅРѕРїРєРё РґРѕР±Р°РІР»РµРЅРёСЏ РІРµСЂС€РёРЅС‹
 {
 	if (ButtonCheck == 3) {
 		glColor3f(0.603, 0.803, 0.196);
@@ -767,7 +767,7 @@ void drawBtnAddVertex() //Метод отрисови кнопки добавления вершины
 		glutBitmapCharacter(GLUT_BITMAP_8_BY_13, name[i]);
 	}
 }
-void drawBtnDelVertex() //Метод отрисови кнопки удаления вершины
+void drawBtnDelVertex() //РњРµС‚РѕРґ РѕС‚СЂРёСЃРѕРІРё РєРЅРѕРїРєРё СѓРґР°Р»РµРЅРёСЏ РІРµСЂС€РёРЅС‹
 {
 	if (ButtonCheck == 4) {
 		glColor3f(0.603, 0.803, 0.196);
@@ -799,7 +799,7 @@ void drawBtnDelVertex() //Метод отрисови кнопки удаления вершины
 		glutBitmapCharacter(GLUT_BITMAP_8_BY_13, name1[i]);
 	}
 }
-void drawBtnAddEdge() //Метод отрисови кнопки добавления ребер
+void drawBtnAddEdge() //РњРµС‚РѕРґ РѕС‚СЂРёСЃРѕРІРё РєРЅРѕРїРєРё РґРѕР±Р°РІР»РµРЅРёСЏ СЂРµР±РµСЂ
 {
 	if (ButtonCheck == 5) {
 		glColor3f(0.603, 0.803, 0.196);
@@ -826,7 +826,7 @@ void drawBtnAddEdge() //Метод отрисови кнопки добавления ребер
 		glutBitmapCharacter(GLUT_BITMAP_8_BY_13, name[i]);
 	}
 }
-void drawBtnDelEdge() //Метод отрисови кнопки удаления ребер
+void drawBtnDelEdge() //РњРµС‚РѕРґ РѕС‚СЂРёСЃРѕРІРё РєРЅРѕРїРєРё СѓРґР°Р»РµРЅРёСЏ СЂРµР±РµСЂ
 {
 	if (ButtonCheck == 6) {
 		glColor3f(0.603, 0.803, 0.196);
@@ -853,7 +853,7 @@ void drawBtnDelEdge() //Метод отрисови кнопки удаления ребер
 		glutBitmapCharacter(GLUT_BITMAP_8_BY_13, name[i]);
 	}
 }
-void drawCircle(int x, int y, int R) //Метод отрисови круга
+void drawCircle(int x, int y, int R) //РњРµС‚РѕРґ РѕС‚СЂРёСЃРѕРІРё РєСЂСѓРіР°
 {
 	glColor3f(0.225f, 0.893f, 1.0f);
 	float x1, y1;
@@ -879,7 +879,7 @@ void drawCircle(int x, int y, int R) //Метод отрисови круга
 	}
 	glEnd();
 }
-void drawCircleMouseOn(int x, int y, int R) //Метод отрисови круга на который нажала мышка
+void drawCircleMouseOn(int x, int y, int R) //РњРµС‚РѕРґ РѕС‚СЂРёСЃРѕРІРё РєСЂСѓРіР° РЅР° РєРѕС‚РѕСЂС‹Р№ РЅР°Р¶Р°Р»Р° РјС‹С€РєР°
 {
 	glColor3f(0.686, 0.933, 0.933);
 	float x1, y1;
@@ -904,7 +904,7 @@ void drawCircleMouseOn(int x, int y, int R) //Метод отрисови круга на который на
 	}
 	glEnd();
 }
-void drawText(int text, int x1, int y1) //Метод отрисови текста
+void drawText(int text, int x1, int y1) //РњРµС‚РѕРґ РѕС‚СЂРёСЃРѕРІРё С‚РµРєСЃС‚Р°
 {
 	glColor3f(0.0, 0.0, 0.0);
 	GLvoid* font = GLUT_BITMAP_TIMES_ROMAN_24;
@@ -914,7 +914,7 @@ void drawText(int text, int x1, int y1) //Метод отрисови текста
 		glutBitmapCharacter(font, s[j]);
 	}
 }
-void drawLine(int text, int x0, int y0, int x1, int y1) //Метод отрисови линий
+void drawLine(int text, int x0, int y0, int x1, int y1) //РњРµС‚РѕРґ РѕС‚СЂРёСЃРѕРІРё Р»РёРЅРёР№
 {
 	glColor3i(0, 0, 0);
 	glBegin(GL_LINES);
@@ -936,7 +936,7 @@ void drawLine(int text, int x0, int y0, int x1, int y1) //Метод отрисови линий
 	glVertex2f(x1 + 10 * (vx - vy), y1 + 10 * (vy + vx));
 	glEnd();
 }
-void drawVertex(int n) //Метод отрисовки вершин
+void drawVertex(int n) //РњРµС‚РѕРґ РѕС‚СЂРёСЃРѕРІРєРё РІРµСЂС€РёРЅ
 {
 	for (int i = 0; i < n; i++)
 	{
