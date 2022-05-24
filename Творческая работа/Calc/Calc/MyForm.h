@@ -551,12 +551,12 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		if (comboBox2->Text == "JPY")
 		{
 			JPY_RUB = System::Convert::ToDouble(pattern2);
-			Namenal /= JPY_RUB;
+			Namenal /= JPY_RUB / 100;
 		}
 		if (comboBox2->Text == "UAH")
 		{
 			UAH_RUB = System::Convert::ToDouble(pattern2);
-			Namenal /= UAH_RUB;
+			Namenal /= UAH_RUB / 10;
 		}
 		if (comboBox2->Text == "RUB")
 		{
@@ -588,12 +588,12 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		if (comboBox2->Text == "JPY")
 		{
 			JPY_RUB = System::Convert::ToDouble(pattern2);
-			Namenal *= USD_RUB / JPY_RUB;
+			Namenal *= USD_RUB / JPY_RUB * 100;
 		}
 		if (comboBox2->Text == "UAH")
 		{
 			UAH_RUB = System::Convert::ToDouble(pattern2);
-			Namenal *= USD_RUB / UAH_RUB;
+			Namenal *= USD_RUB / UAH_RUB * 10;
 		}
 		if (comboBox2->Text == "USD")
 		{
@@ -624,12 +624,12 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		if (comboBox2->Text == "JPY")
 		{
 			JPY_RUB = System::Convert::ToDouble(pattern2);
-			Namenal *= EUR_RUB / JPY_RUB;
+			Namenal *= EUR_RUB / JPY_RUB * 100;
 		}
 		if (comboBox2->Text == "UAH")
 		{
 			UAH_RUB = System::Convert::ToDouble(pattern2);
-			Namenal *= EUR_RUB / UAH_RUB;
+			Namenal *= EUR_RUB / UAH_RUB * 10;
 		}
 		if (comboBox2->Text == "EUR")
 		{
@@ -661,12 +661,12 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		if (comboBox2->Text == "JPY")
 		{
 			JPY_RUB = System::Convert::ToDouble(pattern2);
-			Namenal *= AUD_RUB / JPY_RUB;
+			Namenal *= AUD_RUB / JPY_RUB * 100;
 		}
 		if (comboBox2->Text == "UAH")
 		{
 			UAH_RUB = System::Convert::ToDouble(pattern2);
-			Namenal *= AUD_RUB / UAH_RUB;
+			Namenal *= AUD_RUB / UAH_RUB * 10;
 		}
 		if (comboBox2->Text == "AUD")
 		{
@@ -678,32 +678,32 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	{
 		if (comboBox2->Text == "RUB")
 		{
-			Namenal *= JPY_RUB;
+			Namenal *= JPY_RUB / 100;
 		}
 		if (comboBox2->Text == "USD")
 		{
 			USD_RUB = System::Convert::ToDouble(pattern2);
-			Namenal *= JPY_RUB / USD_RUB;
+			Namenal *= JPY_RUB / USD_RUB / 100;
 		}
 		if (comboBox2->Text == "EUR")
 		{
 			EUR_RUB = System::Convert::ToDouble(pattern2);
-			Namenal *= JPY_RUB / EUR_RUB;
+			Namenal *= JPY_RUB / EUR_RUB / 100;
 		}
 		if (comboBox2->Text == "GBP")
 		{
 			GBP_RUB = System::Convert::ToDouble(pattern2);
-			Namenal *= JPY_RUB / GBP_RUB;
+			Namenal *= JPY_RUB / GBP_RUB / 100;
 		}
 		if (comboBox2->Text == "AUD")
 		{
 			AUD_RUB = System::Convert::ToDouble(pattern2);
-			Namenal *= JPY_RUB / AUD_RUB;
+			Namenal *= JPY_RUB / AUD_RUB / 100;
 		}
 		if (comboBox2->Text == "UAH")
 		{
 			UAH_RUB = System::Convert::ToDouble(pattern2);
-			Namenal *= JPY_RUB / UAH_RUB;
+			Namenal *= JPY_RUB / UAH_RUB / 10;
 		}
 		if (comboBox2->Text == "JPY")
 		{
@@ -730,7 +730,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		if (comboBox2->Text == "JPY")
 		{
 			JPY_RUB = System::Convert::ToDouble(pattern2);
-			Namenal *= GBP_RUB / JPY_RUB;
+			Namenal *= GBP_RUB / JPY_RUB * 100;
 		}
 		if (comboBox2->Text == "AUD")
 		{
@@ -740,7 +740,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		if (comboBox2->Text == "UAH")
 		{
 			UAH_RUB = System::Convert::ToDouble(pattern2);
-			Namenal *= GBP_RUB / UAH_RUB;
+			Namenal *= GBP_RUB / UAH_RUB * 10;
 		}
 		if (comboBox2->Text == "GBP")
 		{
@@ -752,32 +752,32 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	{
 		if (comboBox2->Text == "RUB")
 		{
-			Namenal *= UAH_RUB * 10;
+			Namenal *= UAH_RUB/10;
 		}
 		if (comboBox2->Text == "USD")
 		{
 			USD_RUB = System::Convert::ToDouble(pattern2);
-			Namenal *= UAH_RUB / USD_RUB * 10;
+			Namenal *= (UAH_RUB / USD_RUB)/10;
 		}
 		if (comboBox2->Text == "EUR")
 		{
 			EUR_RUB = System::Convert::ToDouble(pattern2);
-			Namenal *= UAH_RUB / EUR_RUB * 10;
+			Namenal *= (UAH_RUB / EUR_RUB) / 10;
 		}
 		if (comboBox2->Text == "JPY")
 		{
 			JPY_RUB = System::Convert::ToDouble(pattern2);
-			Namenal *= UAH_RUB / JPY_RUB * 10;
+			Namenal *= (UAH_RUB / JPY_RUB) * 10;
 		}
 		if (comboBox2->Text == "AUD")
 		{
 			AUD_RUB = System::Convert::ToDouble(pattern2);
-			Namenal *= UAH_RUB / AUD_RUB * 10;
+			Namenal *= (UAH_RUB / AUD_RUB) / 10;
 		}
 		if (comboBox2->Text == "GBP")
 		{
 			GBP_RUB = System::Convert::ToDouble(pattern2);
-			Namenal *= UAH_RUB / GBP_RUB * 10;
+			Namenal *= (UAH_RUB / GBP_RUB) / 10;
 		}
 		if (comboBox2->Text == "UAH")
 		{
@@ -793,7 +793,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	}
 	else
 	{
-		label2->Text = "Курс на " + dateTimePicker1 -> Value.ToLongDateString() +"\nсостовляет:\n" + numericUpDown1->Value + " " + comboBox1->Text + " = " + round(Namenal * 100) / 100 + " " + comboBox2->Text; //Вывод результата
+		label2->Text = "Курс на " + dateTimePicker1 -> Value.ToLongDateString() +"\nсоставляет:\n" + numericUpDown1->Value + " " + comboBox1->Text + " = " + round(Namenal * 100) / 100 + " " + comboBox2->Text; //Вывод результата
 	}
 }
 private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -817,74 +817,4 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	label2->Text = "";
 	label7->Text = "Аксёнов Дмитрий РИС-21-1б";
 
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//----------------------------------------------------------------------------------------------------//
-//-----------------------------------------Пасхальный-------------------------------------------------//
-//----------------------------------------------------------------------------------------------------//
-
-
-
-private: System::Void label8_Click(System::Object^ sender, System::EventArgs^ e) {
-	label8->Text = "Политех - это круто!";
-	if (flag == true)
-	{
-	   lol1 += 1;
-	   label8->Text = "| " + lol1 + " |";
-    }
-
-	if (lol1 >= 10 && flag == true)
-	{
-		lol1 = 0;
-		flag1 = true;
-		label8->Text = "OK";
-	}
-}
-private: System::Void label7_Click(System::Object^ sender, System::EventArgs^ e) {
-	label7->Text = "Аксёнов Дмитрий РИС-21-1б::-::GitHub -> https://github.com/AxyonovDmitry";
-	if (flag == true && flag1 == true)
-	{
-		flag = false;
-		flag1 = false;
-		label2->Text = "Поздравляю!\nТы нашел пасхалку\nМолодец, и что теперь?";
-	}
-}
-private: System::Void pictureBox3_Click(System::Object^ sender, System::EventArgs^ e) {
-	lol += 1;
-	if (lol >= 10)
-	{
-		lol = 0;
-		label8->Text = "Нажимай на меня";
-		flag = true;
-	}
-}
-};
 }
