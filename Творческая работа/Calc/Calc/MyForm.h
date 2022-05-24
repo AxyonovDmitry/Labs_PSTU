@@ -752,32 +752,32 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	{
 		if (comboBox2->Text == "RUB")
 		{
-			Namenal *= UAH_RUB;
+			Namenal *= UAH_RUB * 10;
 		}
 		if (comboBox2->Text == "USD")
 		{
 			USD_RUB = System::Convert::ToDouble(pattern2);
-			Namenal *= UAH_RUB / USD_RUB;
+			Namenal *= UAH_RUB / USD_RUB * 10;
 		}
 		if (comboBox2->Text == "EUR")
 		{
 			EUR_RUB = System::Convert::ToDouble(pattern2);
-			Namenal *= UAH_RUB / EUR_RUB;
+			Namenal *= UAH_RUB / EUR_RUB * 10;
 		}
 		if (comboBox2->Text == "JPY")
 		{
 			JPY_RUB = System::Convert::ToDouble(pattern2);
-			Namenal *= UAH_RUB / JPY_RUB;
+			Namenal *= UAH_RUB / JPY_RUB * 10;
 		}
 		if (comboBox2->Text == "AUD")
 		{
 			AUD_RUB = System::Convert::ToDouble(pattern2);
-			Namenal *= UAH_RUB / AUD_RUB;
+			Namenal *= UAH_RUB / AUD_RUB * 10;
 		}
 		if (comboBox2->Text == "GBP")
 		{
 			GBP_RUB = System::Convert::ToDouble(pattern2);
-			Namenal *= UAH_RUB / GBP_RUB;
+			Namenal *= UAH_RUB / GBP_RUB * 10;
 		}
 		if (comboBox2->Text == "UAH")
 		{
